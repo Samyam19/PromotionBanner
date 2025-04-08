@@ -14,33 +14,33 @@ namespace PromotionBanner.Repository
 
         public async Task<IEnumerable<Banner>> GetAllAsync()
         {
-            return await _context.Banners.Include(b => b.Company).ToListAsync();
+            return await _context.Banner.Include(b => b.Company).ToListAsync();
         }
 
         public async Task<Banner?> GetByIdAsync(int id)
         {
-            return await _context.Banners.Include(b => b.Company)
+            return await _context.Banner.Include(b => b.Company)
                                          .FirstOrDefaultAsync(b => b.Id == id);
         }
 
         public async Task AddAsync(Banner banner)
         {
-            _context.Banners.Add(banner);
+            _context.Banner.Add(banner);
             await _context.SaveChangesAsync();
         }
 
         public async Task UpdateAsync(Banner banner)
         {
-            _context.Banners.Update(banner);
+            _context.Banner.Update(banner);
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            var banner = await _context.Banners.FindAsync(id);
+            var banner = await _context.Banner.FindAsync(id);
             if (banner != null)
             {
-                _context.Banners.Remove(banner);
+                _context.Banner.Remove(banner);
                 await _context.SaveChangesAsync();
             }
         }

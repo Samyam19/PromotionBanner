@@ -3,9 +3,9 @@ using PromotionBanner.Entities;
 
 namespace PromotionBanner
 {
-    public class PromitionBannerDbContext : DbContext
+    public class PromotionBannerDbContext : DbContext
     {
-        public PromitionBannerDbContext(DbContextOptions<PromitionBannerDbContext> options): base(options) 
+        public PromotionBannerDbContext(DbContextOptions<PromotionBannerDbContext> options): base(options) 
         {
         }
 
